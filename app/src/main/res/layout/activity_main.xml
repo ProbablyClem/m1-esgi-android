@@ -10,7 +10,7 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:id="@+id/btn_increment"
+        android:id="@+id/btn_search"
         android:text="Search"
         android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"

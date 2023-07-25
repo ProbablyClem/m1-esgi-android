@@ -1,11 +1,23 @@
 package com.example.pokeapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pokeapp.databinding.ActivityListBinding
+import com.example.pokeapp.databinding.ActivityMainBinding
 
 class ListActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityListBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+        binding = ActivityListBinding.inflate(layoutInflater)
+        binding.btnDetail.setOnClickListener {
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivity(intent)
+        }
+
+        setContentView(binding.root)
     }
 }
