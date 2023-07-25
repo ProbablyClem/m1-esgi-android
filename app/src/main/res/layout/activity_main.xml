@@ -4,19 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
     tools:context=".MainActivity">
 
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/title"
+        android:layout_width="328dp"
+        android:layout_height="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:src="@drawable/pokeball" />
+
+        <TextView
+            android:layout_marginLeft="25dp"
+            android:id="@+id/pok_dex"
+            android:layout_width="106dp"
+            android:layout_height="32dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="-4sp"
+            android:text="@string/app_name"
+            android:textAppearance="@style/pok_dex" />
+    </RelativeLayout>
 
     <Button
+        android:id="@+id/btn_search"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:id="@+id/btn_search"
         android:text="Search"
         android:textColor="@color/red"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
