@@ -5,5 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/header"
+            android:layout_height="76dp"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/pokemon_name"
+                android:layout_height="32dp"
+                android:lineSpacingExtra="-4sp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="22dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Mem"
+                />
+        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- android:text="@string/pok_mon_nam"
+     android:textAppearance="@style/pok_mon_nam"
+    android:textColor="@color/Bug" -->
