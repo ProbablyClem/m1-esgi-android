@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/red"
@@ -77,35 +76,246 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
         </ImageView>
-
         <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/card"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:clipToOutline="true"
-            android:background="@drawable/card"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_container"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_margin="7dp"
+            android:id="@+id/pokeball"
+            android:layout_width="208dp"
+            android:layout_height="208dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            app:layout_constraintTop_toTopOf="@id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/pokeball"
             />
 
-        <ImageView
-            android:id="@+id/type_component"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/pokemon_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/type_component"
-            >
-        </ImageView>
+    <RelativeLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="7dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/card"
+        android:clipToOutline="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokeball"
+        app:layout_constraintVertical_bias="0.307" />
 
+    <ImageView
+        android:id="@+id/type_component"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pokemon_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/type_component"
+        android:paddingBottom="16dp"
+        />
 
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/type_component"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Détails du Pokémon"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:lineSpacingExtra="-5sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="@color/red"
+        android:paddingBottom="16dp"
+        />
 
+    <LinearLayout
+        android:id="@+id/weight_size_abilitie_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/about"
+        app:layout_constraintStart_toStartOf="@id/card"
+        app:layout_constraintEnd_toEndOf="@id/card"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/frame_1"
+                android:layout_width="103.33dp"
+                android:layout_height="32dp"
+                android:gravity="center">
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/weight_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToOutline="true"
+                    android:background="@drawable/weight_icon">
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/weight_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingLeft="6dp"
+                    android:gravity="center"
+                    android:text="8,5"
+                    android:textSize="16sp">></TextView>
+                <TextView
+                    android:id="@+id/kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kg"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dp">
+                </TextView>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weight"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="12sp"
+                android:gravity="center_horizontal|center_vertical"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:background="#E0E0E0"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:id="@+id/frame_2"
+                android:layout_width="103.33dp"
+                android:layout_height="32dp"
+                android:gravity="center">
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/straighten_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToOutline="true"
+                    android:background="@drawable/straighten_icon"
+                    android:rotation="90"
+                    android:paddingRight="8dp">
+                </RelativeLayout>
 
-
+                <TextView
+                    android:id="@+id/size_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingLeft="6dp"
+                    android:gravity="center"
+                    android:text="8,5"
+                    android:textSize="16sp"></TextView>
+                <TextView
+                    android:id="@+id/m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/m"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="1sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dp">
+                </TextView>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/straight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/straight"
+                android:gravity="center_horizontal|center_vertical"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="12sp"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:background="#E0E0E0"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:id="@+id/frame_3"
+                android:layout_width="103.33dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/first_capacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingLeft="6dp"
+                    android:gravity="center"
+                    android:text="Fire Punch"
+                    android:textSize="16sp"></TextView>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/abilitie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/abilitie"
+                android:gravity="center_horizontal|center_vertical"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="1sp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/weight_size_abilitie_container"
+        app:layout_constraintStart_toStartOf="@id/weight_size_abilitie_container"
+        app:layout_constraintEnd_toEndOf="@id/weight_size_abilitie_container"
+        android:text="It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail."
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14dp"
+        />
+    <TextView
+        android:id="@+id/base_stat_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="@id/description"
+        app:layout_constraintEnd_toEndOf="@id/description"
+        android:text="Statistiques de base"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:textColor="@color/red"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- android:text="@string/pok_mon_nam"

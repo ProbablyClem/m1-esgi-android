@@ -2,7 +2,9 @@ package com.example.pokeapp
 
 
 import android.content.Intent
+import android.graphics.drawable.VectorDrawable
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokeapp.databinding.ActivityDetailBinding
 import kotlin.properties.Delegates
@@ -21,9 +23,10 @@ class DetailActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             startActivity(intent)
         }
-
-
+        binding.typeComponent.setColorFilter(typePokemonColor)
 
         setContentView(binding.root)
     }
 }
+
+//@+id/description max size 100 characters

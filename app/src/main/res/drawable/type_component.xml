@@ -14,6 +14,7 @@
         <path
             android:id="@+id/fill_type_component"
             android:pathData="M0 0V20H51V0"
+            android:fillColor="@color/red"
             />
     </group>
 </vector>
