@@ -1,15 +1,11 @@
 package com.example.pokeapp
 
-import android.R
+
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokeapp.databinding.ActivityDetailBinding
 import kotlin.properties.Delegates
-
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding

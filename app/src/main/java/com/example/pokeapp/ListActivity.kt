@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.pokeapp.databinding.ActivityListBinding
-import com.example.pokeapp.databinding.ActivityMainBinding
 
 class ListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
