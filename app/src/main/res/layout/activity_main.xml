@@ -7,44 +7,58 @@
     android:background="@color/primary"
     tools:context=".MainActivity">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/title"
-        android:layout_width="328dp"
-        android:layout_height="32dp"
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_height="wrap_content"
+            android:id="@+id/pokeball"
             android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            android:src="@drawable/pokeball" />
+            android:layout_height="24dp"
+            android:layout_margin="24dp"
+            android:background="@drawable/pokeball"
+            android:clickable="true" />
 
         <TextView
-            android:layout_marginLeft="25dp"
-            android:id="@+id/pok_dex"
-            android:layout_width="106dp"
-            android:layout_height="32dp"
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="11dp"
+            android:fontFamily="@font/poppins_bold"
             android:gravity="center_vertical"
             android:lineSpacingExtra="-4sp"
-            android:text="@string/app_name"
-            android:textAppearance="@style/pok_dex" />
-    </RelativeLayout>
+            android:text="PokeApp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:text="Search"
-        android:textColor="@color/red"
+    <com.google.android.material.search.SearchBar
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/search_bar"
+        app:layout_constraintVertical_bias="0.205"
+        android:background="@drawable/rounded_corner"
+        android:text="Search" />
 </androidx.constraintlayout.widget.ConstraintLayout>
