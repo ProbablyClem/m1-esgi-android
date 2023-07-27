@@ -167,7 +167,7 @@
                     android:paddingLeft="6dp"
                     android:gravity="center"
                     android:text="8,5"
-                    android:textSize="16sp">></TextView>
+                    android:textSize="16sp"></TextView>
                 <TextView
                     android:id="@+id/kg"
                     android:layout_width="wrap_content"
@@ -316,6 +316,62 @@
         android:textSize="16sp"
         android:textColor="@color/red"
         />
+    <TextView
+        android:id="@+id/hpText"
+        android:text="@string/hp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/base_stat_title"
+        app:layout_constraintEnd_toStartOf="@id/statHp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="30dp"
+        android:paddingBottom="5dp">
+    </TextView>
+
+    <ProgressBar
+        android:id="@+id/statHp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        app:layout_constraintTop_toBottomOf="@id/base_stat_title"
+        app:layout_constraintStart_toEndOf="@id/divider3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="40dp"
+        android:paddingBottom="10dp">
+    </ProgressBar>
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="1dp"
+        android:layout_height="48dp"
+        android:background="#E0E0E0"
+        app:layout_constraintStart_toEndOf="@id/hpText"
+        app:layout_constraintEnd_toStartOf="@id/statHp"
+        app:layout_constraintTop_toBottomOf="@id/base_stat_title">
+    </View>
+
+    <TextView
+        android:id="@+id/attackStat"
+        android:text="@string/attack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hpText"
+        app:layout_constraintEnd_toStartOf="@id/statHp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="30dp"
+        android:paddingBottom="5dp">
+    </TextView>
+
+    <ProgressBar
+        android:id="@+id/statAttack"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/statHp"
+        app:layout_constraintStart_toStartOf="@id/statHp"
+        app:layout_constraintTop_toBottomOf="@id/statHp">
+    </ProgressBar>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- android:text="@string/pok_mon_nam"
