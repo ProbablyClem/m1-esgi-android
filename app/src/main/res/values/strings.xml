@@ -6,5 +6,7 @@
     <string name="straight">Taille</string>
     <string name="m">m</string>
     <string name="abilitie">Capacité</string>
+    <string name="hp">PV</string>
+    <string name="attack">Att</string>
 
 </resources>
