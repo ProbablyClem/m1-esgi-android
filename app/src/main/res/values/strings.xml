@@ -7,6 +7,9 @@
     <string name="m">m</string>
     <string name="abilitie">Capacité</string>
     <string name="hp">PV</string>
-    <string name="attack">Att</string>
-
+    <string name="attack">ATT</string>
+    <string name="defense">DEF</string>
+    <string name="special_attack">SATT</string>
+    <string name="special_defense">SDEF</string>
+    <string name="speed">VIT</string>
 </resources>

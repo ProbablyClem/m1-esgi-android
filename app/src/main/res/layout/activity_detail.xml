@@ -309,7 +309,7 @@
         app:layout_constraintEnd_toEndOf="@id/description"
         android:text="Statistiques de base"
         android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="8dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:fontFamily="@font/poppins_bold"
@@ -321,12 +321,29 @@
         android:text="@string/hp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/base_stat_title"
-        app:layout_constraintEnd_toStartOf="@id/statHp"
+        app:layout_constraintEnd_toStartOf="@id/divider3"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="30dp"
-        android:paddingBottom="5dp">
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:textColor="@color/red">
+    </TextView>
+
+    <TextView
+        android:id="@+id/hpValue"
+        android:text="60"
+        app:layout_constraintStart_toStartOf="@id/divider3"
+        app:layout_constraintTop_toBottomOf="@id/base_stat_title"
+        app:layout_constraintEnd_toStartOf="@id/statHp"
+        app:layout_constraintBottom_toBottomOf="@id/hpText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="center">
     </TextView>
 
     <ProgressBar
@@ -335,33 +352,54 @@
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         app:layout_constraintTop_toBottomOf="@id/base_stat_title"
-        app:layout_constraintStart_toEndOf="@id/divider3"
+        app:layout_constraintStart_toEndOf="@id/hpValue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/hpValue"
         android:layout_marginRight="40dp"
-        android:paddingBottom="10dp">
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
     </ProgressBar>
     <View
         android:id="@+id/divider3"
-        android:layout_width="1dp"
-        android:layout_height="48dp"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
         android:background="#E0E0E0"
         app:layout_constraintStart_toEndOf="@id/hpText"
-        app:layout_constraintEnd_toStartOf="@id/statHp"
-        app:layout_constraintTop_toBottomOf="@id/base_stat_title">
+        app:layout_constraintEnd_toStartOf="@id/hpValue"
+        app:layout_constraintTop_toBottomOf="@id/base_stat_title"
+        app:layout_constraintBottom_toBottomOf="@id/speedText">
     </View>
 
     <TextView
-        android:id="@+id/attackStat"
+        android:id="@+id/attackText"
         android:text="@string/attack"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hpText"
-        app:layout_constraintEnd_toStartOf="@id/statHp"
+        app:layout_constraintEnd_toStartOf="@id/divider3"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="30dp"
-        android:paddingBottom="5dp">
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:textColor="@color/red">
     </TextView>
+
+    <TextView
+        android:id="@+id/attValue"
+        android:text="60"
+        app:layout_constraintStart_toStartOf="@id/divider3"
+        app:layout_constraintTop_toBottomOf="@id/hpText"
+        app:layout_constraintEnd_toStartOf="@id/statAttack"
+        app:layout_constraintBottom_toBottomOf="@id/attackText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="center">
+    </TextView>
+
 
     <ProgressBar
         android:id="@+id/statAttack"
@@ -370,8 +408,189 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/statHp"
         app:layout_constraintStart_toStartOf="@id/statHp"
-        app:layout_constraintTop_toBottomOf="@id/statHp">
+        app:layout_constraintTop_toBottomOf="@id/statHp"
+        app:layout_constraintBottom_toBottomOf="@id/attValue"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        >
     </ProgressBar>
+
+    <TextView
+        android:id="@+id/defText"
+        android:text="@string/defense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/attackText"
+        app:layout_constraintEnd_toStartOf="@id/divider3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:textColor="@color/red">
+    </TextView>
+
+    <TextView
+        android:id="@+id/defValue"
+        android:text="60"
+        app:layout_constraintStart_toStartOf="@id/divider3"
+        app:layout_constraintTop_toBottomOf="@id/attackText"
+        app:layout_constraintEnd_toStartOf="@id/statDefense"
+        app:layout_constraintBottom_toBottomOf="@id/defText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="center">
+    </TextView>
+
+    <ProgressBar
+        android:id="@+id/statDefense"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/statAttack"
+        app:layout_constraintStart_toStartOf="@id/statAttack"
+        app:layout_constraintTop_toBottomOf="@id/statAttack"
+        app:layout_constraintBottom_toBottomOf="@id/defValue"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        >
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/sAttText"
+        android:text="@string/special_attack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/defText"
+        app:layout_constraintEnd_toStartOf="@id/divider3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:textColor="@color/red">
+    </TextView>
+
+    <TextView
+        android:id="@+id/sAttValue"
+        android:text="60"
+        app:layout_constraintStart_toStartOf="@id/divider3"
+        app:layout_constraintTop_toBottomOf="@id/defText"
+        app:layout_constraintEnd_toStartOf="@id/statSpeAttack"
+        app:layout_constraintBottom_toBottomOf="@id/sAttText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="center">
+    </TextView>
+
+    <ProgressBar
+        android:id="@+id/statSpeAttack"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/statDefense"
+        app:layout_constraintStart_toStartOf="@id/statDefense"
+        app:layout_constraintTop_toBottomOf="@id/statDefense"
+        app:layout_constraintBottom_toBottomOf="@id/sAttValue"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        >
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/sDefText"
+        android:text="@string/special_defense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sAttText"
+        app:layout_constraintEnd_toStartOf="@id/divider3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:textColor="@color/red">
+    </TextView>
+
+    <TextView
+        android:id="@+id/sDefValue"
+        android:text="60"
+        app:layout_constraintStart_toStartOf="@id/divider3"
+        app:layout_constraintTop_toBottomOf="@id/sAttText"
+        app:layout_constraintEnd_toStartOf="@id/statSpeDefense"
+        app:layout_constraintBottom_toBottomOf="@id/sDefText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="center">
+    </TextView>
+
+    <ProgressBar
+        android:id="@+id/statSpeDefense"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/statSpeAttack"
+        app:layout_constraintStart_toStartOf="@id/statSpeAttack"
+        app:layout_constraintTop_toBottomOf="@id/statSpeAttack"
+        app:layout_constraintBottom_toBottomOf="@id/sDefValue"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        >
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/speedText"
+        android:text="@string/speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sDefText"
+        app:layout_constraintEnd_toStartOf="@id/divider3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:textColor="@color/red">
+    </TextView>
+
+    <TextView
+        android:id="@+id/speedValue"
+        android:text="60"
+        app:layout_constraintStart_toStartOf="@id/divider3"
+        app:layout_constraintTop_toBottomOf="@id/sDefText"
+        app:layout_constraintEnd_toStartOf="@id/statSpeed"
+        app:layout_constraintBottom_toBottomOf="@id/speedText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="center">
+    </TextView>
+
+    <ProgressBar
+        android:id="@+id/statSpeed"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/statSpeDefense"
+        app:layout_constraintStart_toStartOf="@id/statSpeDefense"
+        app:layout_constraintTop_toBottomOf="@id/statSpeDefense"
+        app:layout_constraintBottom_toBottomOf="@id/speedValue"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        >
+    </ProgressBar>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- android:text="@string/pok_mon_nam"
