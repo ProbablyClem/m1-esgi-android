@@ -1,12 +1,11 @@
-package com.example.pokeapp
+package com.example.pokeapp.modelView
 
 
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
-import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.toColor
+import com.example.pokeapp.R
 import com.example.pokeapp.databinding.ActivityDetailBinding
 import kotlin.math.round
 
@@ -29,6 +28,12 @@ class DetailActivity : AppCompatActivity() {
         binding.typeComponent.setColorFilter(typePokemonColor)
         binding.statHp.progress = round((120.0/255)*100).toInt()
         binding.statHp.progressTintList = ColorStateList.valueOf(typePokemonColor)
+        binding.hpText.setTextColor(typePokemonColor)
+        binding.attackText.setTextColor(typePokemonColor)
+        binding.defText.setTextColor(typePokemonColor)
+        binding.sAttText.setTextColor(typePokemonColor)
+        binding.sDefText.setTextColor(typePokemonColor)
+        binding.speedText.setTextColor(typePokemonColor)
         setContentView(binding.root)
     }
 }

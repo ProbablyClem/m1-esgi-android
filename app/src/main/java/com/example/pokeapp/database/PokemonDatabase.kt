@@ -1,4 +1,4 @@
-package com.example.pokeapp
+package com.example.pokeapp.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

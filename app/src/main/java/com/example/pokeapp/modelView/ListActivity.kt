@@ -1,4 +1,4 @@
-package com.example.pokeapp
+package com.example.pokeapp.modelView
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
