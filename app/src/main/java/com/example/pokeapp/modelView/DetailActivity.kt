@@ -5,17 +5,33 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.pokeapp.R
 import com.example.pokeapp.databinding.ActivityDetailBinding
+import com.example.pokeapp.model.DetailModel
+import com.example.pokeapp.model.ListModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlin.math.round
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
+    private lateinit var model: DetailModel
     private var typePokemonColor: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
+
+        lifecycleScope.launch(Dispatchers.Main) {
+            model = DetailModel()
+            val result = withContext(Dispatchers.IO) {
+                model.getLastPokemon()
+            }
+            binding.pokemonName.text = result.name
+        }
+
         typePokemonColor = getColor(R.color.Poison)
         binding.container.setBackgroundColor(typePokemonColor)
         binding.about.setTextColor(typePokemonColor)

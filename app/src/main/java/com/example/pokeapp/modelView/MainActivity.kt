@@ -8,6 +8,8 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.room.Room
+import com.example.pokeapp.database.PokemonDatabase
 import com.example.pokeapp.databinding.ActivityMainBinding
 import com.example.pokeapp.dto.PokemonDto
 import com.example.pokeapp.model.MainModel
@@ -17,11 +19,18 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        lateinit var database: PokemonDatabase
+    }
     private lateinit var binding: ActivityMainBinding
     private lateinit var model: MainModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        //initialize the localdatabase
+        database = Room.databaseBuilder(applicationContext, PokemonDatabase::class.java, "pokemon_db")
+            .fallbackToDestructiveMigration()
+            .build()
         binding.searchBar.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 //Perform Code
