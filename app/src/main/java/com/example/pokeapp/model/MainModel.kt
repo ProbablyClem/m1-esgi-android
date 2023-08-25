@@ -18,6 +18,18 @@ class MainModel : ViewModel() {
             val pokemon = Pokemon()
             pokemon.pokemon_id = pokemonDto.pokedexId!!
             pokemon.name = pokemonDto.name?.fr!!
+            pokemon.type = pokemonDto.types?.get(0)?.name!!
+            pokemon.weight = pokemonDto.weight!!
+            pokemon.height = pokemonDto.height!!
+            pokemon.capacity = pokemonDto.talents?.get(0)?.name!!
+            pokemon.description = pokemonDto.category!!
+            pokemon.image = pokemonDto.sprites?.regular!!
+            pokemon.pv = pokemonDto.stats?.hp!!
+            pokemon.attack = pokemonDto.stats?.atk!!
+            pokemon.defense = pokemonDto.stats?.def!!
+            pokemon.attackSpe = pokemonDto.stats?.spe_atk!!
+            pokemon.defenseSpe = pokemonDto.stats?.spe_def!!
+            pokemon.speed = pokemonDto.stats?.vit!!
             pokemon.insertionTimestamp = System.currentTimeMillis()
 
             GlobalScope.launch {

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bug">#A7B723</color>
-    <color name="Dark">#75574C</color>
+    <color name="Insecte">#A7B723</color>
+    <color name="Ténèbres">#75574C</color>
     <color name="Dragon">#7037FF</color>
-    <color name="Electric">#F9CF30</color>
-    <color name="Fairy">#E69EAC</color>
-    <color name="Fighting">#C12239</color>
-    <color name="Fire">#F57D31</color>
-    <color name="Flying">#A891EC</color>
-    <color name="Ghost">#70559B</color>
+    <color name="Électrik">#F9CF30</color>
+    <color name="Fée">#E69EAC</color>
+    <color name="Combat">#C12239</color>
+    <color name="Feu">#F57D31</color>
+    <color name="Vol">#A891EC</color>
+    <color name="Spectre">#70559B</color>
     <color name="Normal">#AAA67F</color>
-    <color name="Grass">#74CB48</color>
-    <color name="Ground">#DEC16B</color>
-    <color name="Ice">#9AD6DF</color>
+    <color name="Plante">#74CB48</color>
+    <color name="Sol">#DEC16B</color>
+    <color name="Glace">#9AD6DF</color>
     <color name="Poison">#A43E9E</color>
-    <color name="Psychic">#FB5584</color>
-    <color name="Rock">#B69E31</color>
-    <color name="Steel">#B7B9D0</color>
-    <color name="Water">#6493EB</color>
+    <color name="Psy">#FB5584</color>
+    <color name="Roche">#B69E31</color>
+    <color name="Acier">#B7B9D0</color>
+    <color name="Eau">#6493EB</color>
 </resources>

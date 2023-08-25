@@ -17,39 +17,48 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import androidx.lifecycle.lifecycleScope
+import androidx.room.Room
+import com.example.pokeapp.database.PokemonDatabase
 
 class ListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListBinding
     private lateinit var model: ListModel
+    companion object {
+        lateinit var database: PokemonDatabase
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListBinding.inflate(layoutInflater)
-        binding.arrowBack.setOnClickListener() {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-            startActivity(intent)
-        }
-
-        val recyclerView = binding.recyclerView
+        var myList : MutableList<Pokemon> = mutableListOf()
         val adapter = PokemonAdapter{ clickedPokemon ->
             // Handle item click here
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("pokemon_id", clickedPokemon.pokemon_id)
             startActivity(intent)
         }
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
         lifecycleScope.launch(Dispatchers.Main) {
             model = ListModel()
             val result = withContext(Dispatchers.IO) {
                 model.getLastPokemon()
             }
-            val myList = mutableListOf(result)
+            myList = mutableListOf(result)
             adapter.submitList(myList)
         }
+        binding.arrowBack.setOnClickListener() {
+            val intent = Intent(this, MainActivity::class.java)
+            adapter.currentList.clear()
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivity(intent)
+        }
+
+        val recyclerView = binding.recyclerView
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+
         setContentView(binding.root)
     }
 }
