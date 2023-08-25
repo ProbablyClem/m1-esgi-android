@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Mega(
-    val orbe: String,
-    val sprites: Sprites
+    val orbe: String?,
+    val sprites: Sprites?
 )

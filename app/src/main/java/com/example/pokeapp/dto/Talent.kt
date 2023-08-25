@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Talent(
-    val name: String,
-    val tc: Boolean
+    val name: String?,
+    val tc: Boolean?
 )

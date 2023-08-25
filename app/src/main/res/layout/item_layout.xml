@@ -5,4 +5,6 @@
     android:layout_height="wrap_content"
     android:textAppearance="?android:textAppearanceLarge"
     android:padding="16dp"
+    android:fontFamily="@font/poppins_bold"
+    android:textColor="@color/red"
     android:clickable="true"/>

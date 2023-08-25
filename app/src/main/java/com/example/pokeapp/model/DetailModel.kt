@@ -13,8 +13,8 @@ class DetailModel: ViewModel() {
         return MainActivity.database.pokemonDao().getLatestPokemon()!!
     }
 
-    fun calculProgress(pv: Int):Int {
-        return round((pv.toDouble()/255)*100).toInt()
+    fun calculProgress(value: Int, Maxvalue: Int):Int {
+        return round((value.toDouble()/Maxvalue)*100).toInt()
     }
 
     fun getColorThemeByType(type: String, activity: DetailActivity): Int {

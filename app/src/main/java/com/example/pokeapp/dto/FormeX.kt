@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class FormeX(
-    val alola: String,
-    val galar: String
+    val alola: String?,
+    val galar: String?
 )

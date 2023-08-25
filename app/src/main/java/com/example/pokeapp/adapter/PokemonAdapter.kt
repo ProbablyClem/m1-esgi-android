@@ -25,7 +25,7 @@ class PokemonAdapter(private val onItemClick: (Pokemon) -> Unit) : ListAdapter<P
         private val nameTextView: TextView = itemView.findViewById(R.id.textViewForList)
 
         fun bind(pokemon: Pokemon) {
-            nameTextView.text = pokemon.name + "       " + "#" +pokemon.pokemon_id
+            nameTextView.text = pokemon.name + "             " + "#" +pokemon.pokemon_id
 
             itemView.setOnClickListener {
                 onItemClick(pokemon)

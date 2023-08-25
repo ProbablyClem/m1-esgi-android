@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Forme(
-    val forme: List<FormeX>
+    val forme: FormeX? = null
 ) {
-    constructor() : this(listOf())
+    constructor() : this(FormeX(null, null))
 }

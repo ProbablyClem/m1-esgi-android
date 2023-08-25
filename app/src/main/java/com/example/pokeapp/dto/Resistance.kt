@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Resistance(
-    val multiplier: Double,
-    val name: String
+    val multiplier: Double?,
+    val name: String?
 )

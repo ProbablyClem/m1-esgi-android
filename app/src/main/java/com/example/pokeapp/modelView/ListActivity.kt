@@ -32,8 +32,7 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListBinding.inflate(layoutInflater)
         var myList : MutableList<Pokemon> = mutableListOf()
-        val adapter = PokemonAdapter{ clickedPokemon ->
-            // Handle item click here
+        val adapter = PokemonAdapter { clickedPokemon ->
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("pokemon_id", clickedPokemon.pokemon_id)
             startActivity(intent)
@@ -44,7 +43,10 @@ class ListActivity : AppCompatActivity() {
                 model.getLastPokemon()
             }
             myList = mutableListOf(result)
-            adapter.submitList(myList)
+
+            if (adapter != null) {
+                adapter.submitList(myList)
+            }
         }
         binding.arrowBack.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)

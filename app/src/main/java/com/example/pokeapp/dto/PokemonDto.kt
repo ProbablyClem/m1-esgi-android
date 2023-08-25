@@ -8,7 +8,7 @@ data class PokemonDto(
     val category: String? = null,
     val egg_groups: List<String>? = null,
     val evolution: Evolution? = null,
-    val forme: Forme? = null,
+    val forme: List<Forme>? = null,
     val generation: Int? = null,
     val height: String? = null,
     val level_100: Int? = null,
@@ -22,5 +22,5 @@ data class PokemonDto(
     val types: List<Type>? = null,
     val weight: String? = null
 ) {
-    constructor() : this(0, "", emptyList(), Evolution(), Forme(), 0, "", 0, Name(), 0, emptyList(), Sexe(), SpritesX(), Stats(), emptyList(), emptyList(), "")
+    constructor() : this(0, "", emptyList(), Evolution(), emptyList(), 0, "", 0, Name(), 0, emptyList(), Sexe(), SpritesX(), Stats(), emptyList(), emptyList(), "")
 }

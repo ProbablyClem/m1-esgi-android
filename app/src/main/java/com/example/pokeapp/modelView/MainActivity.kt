@@ -12,6 +12,7 @@ import androidx.room.Room
 import com.example.pokeapp.database.PokemonDatabase
 import com.example.pokeapp.databinding.ActivityMainBinding
 import com.example.pokeapp.dto.PokemonDto
+import com.example.pokeapp.model.DetailModel
 import com.example.pokeapp.model.MainModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -33,15 +34,14 @@ class MainActivity : AppCompatActivity() {
             .build()
         binding.searchBar.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
-                //Perform Code
-                Log.d("TheMessage", binding.searchBar.text.toString());
+                Log.d("TheResearch", binding.searchBar.text.toString());
                 search(binding.searchBar.text.toString())
                 return@OnKeyListener true
             }
             false
         })
         binding.searchButton.setOnClickListener {
-            Log.d("TheMessage", binding.searchBar.text.toString());
+            Log.d("TheResearch", binding.searchBar.text.toString());
             search(binding.searchBar.text.toString());
         }
 
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("API Response in english", result.pokedexId.toString())
                     result.name?.let { Log.d("This is the french name", it.fr) }
                     result.evolution?.next?.get(0)
-                        ?.let { Log.d("This is the next evolution", it.name) }
+                        ?.let { it.name?.let { it1 -> Log.d("This is the next evolution", it1) } }
                     goNextPage()
                 }
             }

@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Pre(
-    val name: String,
-    val pokedexId: Int
+    val name: String?,
+    val pokedexId: Int?
 )
